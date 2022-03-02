@@ -108,6 +108,114 @@ img {
 
 /* ---------------------------------------------------------------------------------------------------------------- */
 
+#socollab {
+    margin-top: -2%;
+    width: 100%;
+    height: 87%;
+    background-color: #4a69bd;
+    /* -webkit-clip-path: polygon(0 0, 100% 0, 100% 0%, 0 100%); */
+    /* clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);  */
+    z-index: -1000;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+#socollab #socollab-text {
+    padding-left: 5%;
+    padding-top: 8%;
+    color: white;
+    color: white;
+}
+
+#socollab-stmt {
+    font-size: 50px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+#socollab-para {
+    line-height: 35px;
+    font-size: 22px;
+}
+
+#socollab img {
+    height: 80%;
+    padding-right: 5%;
+}
+
+#socollab #socollab-text-left {
+    padding-left: 5%;
+    padding-top: 8%;
+    color: white;
+    width: 40%;
+    display: inline;
+}
+
+#socollab #socollab-text-right {
+    padding-left: 5%;
+    padding-top: 8%;
+    padding-right: 5%;
+    color: white;
+    float: right;
+    display: inline;
+    width: 40%;
+}
+
+#socollab #socollab-text-right #banner-image {
+    height: 10%;
+    width: 100%;
+    padding-bottom: 2%;
+    float: right;
+    display: inline;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 20%;
+    left: 0;
+    right: 0;
+    background-color: #60a3bc;
+    overflow: hidden;
+    width: 50%;
+    height: 80%;
+    transition: .5s ease;
+    opacity: 0;
+  }
+
+.banner-image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.banner-image-overlay {
+    position: relative;
+    width: 100%;
+    height: 10%;
+}
+  
+.banner-image-overlay:hover .overlay {
+    width: 100%;
+    opacity: 1;
+}
+
+.banner-text {
+    white-space: nowrap; 
+    color: white;
+    font-size: 175%;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+/* ---------------------------------------------------------------------------------------------------
+
 #filler {
     width: 100%;
     height: 150px;
@@ -126,6 +234,23 @@ img {
     background-color: whitesmoke; 
 }
 
+#project-container {
+    margin-top: -5px;
+    width: 100%;
+    height: auto;
+    padding: 30px 0;
+    background-color: whitesmoke; 
+    margin-left: 50%; 
+}
+
+#project-banners {
+    margin-top: -5px;
+    width: 100%;
+    height: auto;
+    padding: 30px 0;
+    background-color: whitesmoke; 
+}
+
 #header-stmt {
     font-size: 45px;
     font-weight: bold;
@@ -136,6 +261,12 @@ img {
 }
 
 #people-container #header-stmt i {
+    vertical-align: middle; 
+    font-size: 17px; 
+    padding-left: 2px; 
+}
+
+#project-banners #header-stmt i {
     vertical-align: middle; 
     font-size: 17px; 
     padding-left: 2px; 
@@ -202,10 +333,8 @@ img {
 
 .wing-card .wing-pic-cont .card-pic {
     width: 100%;
-    /* height: 100%; */
     filter: brightness(1.10);
     text-align: center;
-    /* border: 1px solid black; */
 }
 
 .wing-card .card-details {
@@ -295,7 +424,7 @@ img {
 
 /* ---------------------------------------------------------------------------------------------------------------- */
 
-@media (max-width: 1160px) {
+@media (max-width: 1340px) {
     #hero {
         display: block;
     }
@@ -320,6 +449,14 @@ img {
     }
 
     #people-container #header-stmt i {
+        font-size: 14px;
+    }
+
+    #project-banners #header-stmt {
+        font-size: 35px;
+    }
+
+    #project-banners #header-stmt i {
         font-size: 14px;
     }
 
@@ -387,6 +524,37 @@ img {
     }
 
     #hero-para br {
+        display: none;
+    }
+
+    #socollab {
+        display: block;
+        height: 500px;
+    }
+
+    #socollab img {
+        display: none;
+    }
+
+    #socollab #socollab-text {
+        margin: auto 10px;
+        padding: 17% 10px 0 10px;
+        text-align: center;
+    }
+
+    #socollab-stmt {
+        font-size: 37px;
+        font-weight: bold;
+        text-align: center;
+        padding-bottom: 20px;
+    }
+    
+    #socollab-para {
+        line-height: 32px;
+        font-size: 17px;
+    }
+
+    #socollab-para br {
         display: none;
     }
 
