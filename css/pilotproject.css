@@ -31,9 +31,8 @@ img {
     border: none;
     text-align: left;
     outline: none;
-    font-size: 15px;
+    font-size: 15%;
     border-radius: 10px;
-    
 
   }
   
@@ -45,7 +44,6 @@ img {
       padding: 0 18px;
       display: none;
       overflow: hidden;
-      background-color: #f1f1f1;
       padding-bottom: 2%;
   }
 
@@ -122,7 +120,7 @@ img {
     color: black;
     font-size: 21px;
     line-height: 32px;
-    padding: 10px 0 30px 0;
+    padding: 1% 0 30px 0;
     margin: 0 auto;
     text-align: left;
 }
@@ -135,6 +133,17 @@ img {
     font-weight: bold;
     padding: 20px 0 0 0;
     text-align: left;
+}
+
+#segment-header-special {
+    width: 70%;
+    margin: 0 auto;
+    color: #222f3e;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 20px 0 0 0;
+    text-align: left;
+    padding-top: 4%;
 }
 
 #segment-para {

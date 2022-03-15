@@ -121,6 +121,19 @@ img {
     text-align: left;
 }
 
+#segment-link {
+    width: 70%;
+    margin: 0 auto;
+    color: #4a69bd;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 20px 0 0 0;
+    text-align: left;
+}
+
+#banner-medium-img {
+    
+}
 
 /* ---------------------------------------------------------------------------------------------------------------- */
 

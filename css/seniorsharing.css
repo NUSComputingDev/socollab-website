@@ -121,6 +121,20 @@ img {
     text-align: left;
 }
 
+#segment-link {
+    width: 70%;
+    margin: 0 auto;
+    color: #4a69bd;
+    line-height: 32px;
+    padding: 10% 0;
+    text-align: left;
+    margin-bottom: 20%;
+}
+
+#timeline-img {
+    width: 50%;
+    height: auto;
+}
 
 /* ---------------------------------------------------------------------------------------------------------------- */
 
