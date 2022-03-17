@@ -9,14 +9,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/8663eb90fc.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/hackathons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/hackathons.css">
     <title>Hackathons | SoCollab</title>
 
     <!-- Credits to: https://www.webslesson.info/2017/04/csv-file-to-html-table-using-ajax-jquery.html -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" /> -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <script>
         // This reads the External Hackathons
         $(document).ready(function () {
@@ -52,7 +53,7 @@
     <script>
         // This reads the Internal Hackathons
         $(document).ready(function () {
-            $('#load_data_external').click(function () {
+            $('#load_data_internal').click(function () {
                 $.ajax({
                     url: "assets/Hackathons & Competitions For School of Computing - Internal Hackathons.csv",
                     dataType: "text",
@@ -118,9 +119,9 @@
             <p><a style="color: #78e08f;" href="hackathons.html">Hackathons</a></p>
         </div>
     </div> -->
-    <div class="navbar">
-        <div class="active">
-            <img src="assets/logo.png" width="40" style="padding-left:10px; padding-top:8px; background-color: #60a3bc;" id="logo">
+    <div class="socollab-navbar">
+        <div class="socollab-active">
+            <img src="assets/logo.png" width="40" style="padding-left:10px; padding-top:8px; background-color: #60a3bc;" id="socollab-logo">
         </div>
     
         <!-- Navigation links (hidden by default) -->
@@ -152,7 +153,8 @@
         <div class="tab">
             <button class="tablinks" name="load_data_external" id="load_data_external"
                 onclick="openTabs(event, 'External Hackathons')">External Hackathons</button>
-            <button class="tablinks" onclick="openTabs(event, 'Internal Hackathons')">Internal Hackathons</button>
+            <button class="tablinks" name="load_data_internal" id="load_data_internal"
+                onclick="openTabs(event, 'Internal Hackathons')">Internal Hackathons</button>
         </div>
 
         <!-- Tab content -->
