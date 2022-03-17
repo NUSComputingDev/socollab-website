@@ -16,16 +16,38 @@
 </head>
 
 <body>
-    <div id="navbar">
-        <img src="assets/logo.png" width="40" id="logo">
-        <!-- <p id="logo">NUS Computing Club</p> -->
-        <div id="options">
+    <!-- <div id="navbar">
+        <img src="assets/logo.png" width="40" id="logo"> -->
+    <!-- <p id="logo">NUS Computing Club</p> -->
+    <!-- <div id="options">
             <p><a style="color: #78e08f;" href="index.html">Home</a></p>
             <p><a href="seniorsharings.html">Senior Sharings</a></p>
             <p><a href="pilotproject.html">Pilot Project</a></p>
             <p><a href="medium.html">Medium</a></p>
             <p><a href="hackathons.html">Hackathons</a></p>
+        </div> -->
+    <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+    <!-- <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div> -->
+    <div class="navbar">
+        <div class="active">
+            <img src="assets/logo.png" width="40" style="padding-left:10px; padding-top:8px; background-color: #60a3bc;" id="logo">
         </div>
+    
+        <!-- Navigation links (hidden by default) -->
+        <div id="myLinks">
+            <p><a href="index.html">Home</a></p>
+            <p><a href="seniorsharings.html">Senior Sharings</a></p>
+            <p><a href="pilotprojects.html">Pilot Projects</a></p>
+            <p><a href="medium.html">Medium</a></p>
+            <p><a href="hackathons.html">Hackathons</a></p>
+        </div>
+        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
     </div>
 
     <div id="socollab">
@@ -110,6 +132,17 @@
                 Got feedback? Send it our way! <br> <a target="_blank" href="https://feedback.nuscomputing.com">feedback.nuscomputing.com</a>
             </p> -->
     </div>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
 </body>
 
 </html>

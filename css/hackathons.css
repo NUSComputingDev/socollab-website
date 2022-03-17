@@ -24,7 +24,7 @@ img {
 }
 
 /* ---------------------------------------------------------------------------------------------------------------- */
-
+/* 
 #navbar {
     width: 100%;
     height: 90px;
@@ -64,8 +64,59 @@ img {
     margin: 0 15px;
     font-size: 19px;
     font-weight: bold;
-}
+} */
 
+.navbar {
+    overflow: hidden !important;
+    background-color: #60a3bc;
+    position: relative;
+    padding: 0 0 0 0;
+  }
+  
+  /* Hide the links inside the navigation menu (except for logo/home) */
+  .navbar #socollab-links {
+    display: none;
+  }
+  
+  /* Style navigation menu links */
+  .navbar a {
+    color: #366c80;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+    background-color: #a7ccda;
+  }
+  
+  /* Style the hamburger menu */
+  .navbar a.socollabicon {
+    background: #60a3bc;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    zoom: 1.20;
+  }
+  
+  /* Add a grey background color on mouse-over */
+  .navbar a:hover {
+    background-color: #84becb;
+    color: #3e7b92;
+  }
+  
+  /* Style the active link (or home/logo) */
+  .active {
+    background-color: #60a3bc;
+    color: white;
+    display: inline;
+  }
+
+.logo {
+    margin-left: 10px;
+    width: 40;
+    display: inline-block;
+    background-color: #60a3bc;
+}
 /* ---------------------------------------------------------------------------------------------------------------- */
 
 #main-container {
