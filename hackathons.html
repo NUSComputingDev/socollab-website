@@ -1,98 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="preconnect" href="https://fonts.googleapis.com"> 
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-        <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/8663eb90fc.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="css/hackathons.css">
-        <title>About | NUS Students' Computing Club</title>
 
-        <script>
-            function openCity(evt, cityName) {
-                // Declare all variables
-                var i, tabcontent, tablinks;
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8663eb90fc.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/hackathons.css">
+    <title>About | NUS Students' Computing Club</title>
 
-                // Get all elements with class="tabcontent" and hide them
-                tabcontent = document.getElementsByClassName("tabcontent");
-                for (i = 0; i < tabcontent.length; i++) {
-                    tabcontent[i].style.display = "none";
-                }
-
-                // Get all elements with class="tablinks" and remove the class "active"
-                tablinks = document.getElementsByClassName("tablinks");
-                for (i = 0; i < tablinks.length; i++) {
-                    tablinks[i].className = tablinks[i].className.replace(" active", "");
-                }
-
-                // Show the current tab, and add an "active" class to the button that opened the tab
-                document.getElementById(cityName).style.display = "block";
-                evt.currentTarget.className += " active";
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+         $('#load_data_external').click(function(){
+          $.ajax({
+           url:"assets/Hackathons & Competitions For School of Computing - External Hackathons.csv",
+           dataType:"text",
+           success:function(data)
+           {
+            var employee_data = data.split(/\r?\n|\r/);
+            var table_data = '<table class="table table-bordered table-striped">';
+            for(var count = 0; count<employee_data.length; count++)
+            {
+             var cell_data = employee_data[count].split(",");
+             table_data += '<tr>';
+             for(var cell_count=0; cell_count<cell_data.length; cell_count++)
+             {
+              if(count === 0)
+              {
+               table_data += '<th>'+cell_data[cell_count]+'</th>';
+              }
+              else
+              {
+               table_data += '<td>'+cell_data[cell_count]+'</td>';
+              }
+             }
+             table_data += '</tr>';
             }
-        </script>
-    </head>
+            table_data += '</table>';
+            $('#employee_table').html(table_data);
+           }
+          });
+         });
+         
+        });
+    </script>
 
-    <body>
-        <div id="navbar">
-            <img src="assets/logo.png" width="40" id="logo">
-            <!-- <p id="logo">NUS Computing Club</p> -->
-            <div id="options">
-                <p><a href="index.html">Home</a></p>
-                <p><a href="seniorsharings.html">Senior Sharings</a></p>
-                <p><a href="pilotproject.html">Pilot Project</a></p>
-                <p><a href="medium.html">Medium</a></p>
-                <p><a style="color: #78e08f;" href="hackathons.html">Hackathons</a></p>
-            </div>
+    <script>
+        // This function is to manage the tabs
+        function openTabs(evt, tabName) {
+            // Declare all variables
+            var i, tabcontent, tablinks;
+
+            // Get all elements with class="tabcontent" and hide them
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</head>
+
+<body>
+    <div id="navbar">
+        <img src="assets/logo.png" width="40" id="logo">
+        <!-- <p id="logo">NUS Computing Club</p> -->
+        <div id="options">
+            <p><a href="index.html">Home</a></p>
+            <p><a href="seniorsharings.html">Senior Sharings</a></p>
+            <p><a href="pilotproject.html">Pilot Project</a></p>
+            <p><a href="medium.html">Medium</a></p>
+            <p><a style="color: #78e08f;" href="hackathons.html">Hackathons</a></p>
+        </div>
+    </div>
+
+    <div id="main-container">
+        <img src="assets/banner_hackathon.jpg" alt="Hackathons" id="banner-hackathon-img">
+
+        <p id="about-para">
+            Due to the overwhelming amount of hacakthons which take place both within and outside NUS, the Academic Wing
+            has come up with this excel tracker which allows all students from the School of Computing to easily
+            navigate through a range of hackathons offered. This way we ensure students do not miss opportunities and
+            make the most out of their university life.
+        </p>
+
+        <div class="tab">
+            <button class="tablinks" onclick="openTabs(event, 'External Hackathons')">External Hackathons</button>
+            <button class="tablinks" onclick="openTabs(event, 'Internal Hackathons')">Internal Hackathons</button>
         </div>
 
-        <div id="main-container">
-            <img src="assets/banner_hackathon.jpg" alt="Hackathons" id="banner-hackathon-img">
-
-            <p id="about-para">
-                Due to the overwhelming amount of hacakthons which take place both within and outside NUS, the Academic Wing has come up with this excel tracker which allows all students from the School of Computing to easily navigate through a range of hackathons offered. This way we ensure students do not miss opportunities and make the most out of their university life.
-            </p>
-
-            <div class="tab">
-                <button class="tablinks" onclick="openCity(event, 'External Hackathons')">External Hackathons</button>
-                <button class="tablinks" onclick="openCity(event, 'Internal Hackathons')">Internal Hackathons</button>
-              </div>
-              
-              <!-- Tab content -->
-              <div id="External Hackathons" class="tabcontent">
-                <h3> External Hackathons</h3>
-                <p>External Hackathons list here.</p>
-              </div>
-              
-              <div id="Internal Hackathons" class="tabcontent">
-                <h3>Internal Hackathons</h3>
-                <p>Internal Hackathons list here.</p>
-              </div>
-              
-        </div>
-
-        <div id="footer">
-            <div id="footer-details">
-                <!-- <p id="footer-logo">NUS Computing Club</p> -->
-                <img src="assets/footer_logo.png" id="footer-logo">
-                <div id="socials">
-                    <a target="_blank" href="https://www.facebook.com/nuscomputing"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a target="_blank" href="https://www.instagram.com/NUSComputingClub"><i class="fa-brands fa-instagram"></i></a>
-                    <a target="_blank" href="https://t.me/nuscomputingclub"><i class="fa-brands fa-telegram"></i></a>
-                    <a target="_blank" href="https://www.youtube.com/channel/UCVd-qsSFF328UUqcNxudy0w"><i class="fa-brands fa-youtube"></i></a>
-                    <a target="_blank" href="https://github.com/NUSComputingDev"><i class="fa-brands fa-github"></i></a>
-                    <a target="_blank" href="mailto:connect@nuscomputing.com"><i class="fa-solid fa-envelope"></i></a>
+        <!-- Tab content -->
+        <div id="External Hackathons" class="tabcontent">
+            <h3> External Hackathons</h3>
+            <p>External Hackathons list here.</p>
+            <div class="container">
+                <div class="table-responsive">
+                    <div align="center">
+                        <button type="button" name="load_data_external" id="load_data_external" class="btn btn-info">Load Data</button>
+                    </div>
+                    <br />
+                    <div id="employee_table"></div>
                 </div>
-                <p id="disclaimers">
-                    Copyright © NUS Students' Computing Club • <a style="text-decoration: none; color: white;" href="https://nuscomputing.com/privacy/">Privacy Policy</a>
-                </p>
             </div>
-            <!-- <p id="feedback" style="line-height: 35px;">
+        </div>
+
+        <div id="Internal Hackathons" class="tabcontent">
+            <h3>Internal Hackathons</h3>
+            <p>Internal Hackathons list here.</p>
+        </div>
+
+    </div>
+
+    <div id="footer">
+        <div id="footer-details">
+            <!-- <p id="footer-logo">NUS Computing Club</p> -->
+            <img src="assets/footer_logo.png" id="footer-logo">
+            <div id="socials">
+                <a target="_blank" href="https://www.facebook.com/nuscomputing"><i
+                        class="fa-brands fa-facebook-f"></i></a>
+                <a target="_blank" href="https://www.instagram.com/NUSComputingClub"><i
+                        class="fa-brands fa-instagram"></i></a>
+                <a target="_blank" href="https://t.me/nuscomputingclub"><i class="fa-brands fa-telegram"></i></a>
+                <a target="_blank" href="https://www.youtube.com/channel/UCVd-qsSFF328UUqcNxudy0w"><i
+                        class="fa-brands fa-youtube"></i></a>
+                <a target="_blank" href="https://github.com/NUSComputingDev"><i class="fa-brands fa-github"></i></a>
+                <a target="_blank" href="mailto:connect@nuscomputing.com"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+            <p id="disclaimers">
+                Copyright © NUS Students' Computing Club • <a style="text-decoration: none; color: white;"
+                    href="https://nuscomputing.com/privacy/">Privacy Policy</a>
+            </p>
+        </div>
+        <!-- <p id="feedback" style="line-height: 35px;">
                 Got feedback? Send it our way! <br> <a target="_blank" href="https://feedback.nuscomputing.com">feedback.nuscomputing.com</a>
             </p> -->
-        </div>
-    </body>
-</html>
+    </div>
+</body>
 
+</html>
