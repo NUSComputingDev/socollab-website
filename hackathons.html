@@ -16,38 +16,66 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
-        $(document).ready(function(){
-         $('#load_data_external').click(function(){
-          $.ajax({
-           url:"assets/Hackathons & Competitions For School of Computing - External Hackathons.csv",
-           dataType:"text",
-           success:function(data)
-           {
-            var employee_data = data.split(/\r?\n|\r/);
-            var table_data = '<table class="table table-bordered table-striped">';
-            for(var count = 0; count<employee_data.length; count++)
-            {
-             var cell_data = employee_data[count].split(",");
-             table_data += '<tr>';
-             for(var cell_count=0; cell_count<cell_data.length; cell_count++)
-             {
-              if(count === 0)
-              {
-               table_data += '<th>'+cell_data[cell_count]+'</th>';
-              }
-              else
-              {
-               table_data += '<td>'+cell_data[cell_count]+'</td>';
-              }
-             }
-             table_data += '</tr>';
-            }
-            table_data += '</table>';
-            $('#employee_table').html(table_data);
-           }
-          });
-         });
-         
+        // This reads the External Hackathons
+        $(document).ready(function () {
+            $('#load_data_external').click(function () {
+                $.ajax({
+                    url: "assets/Hackathons & Competitions For School of Computing - External Hackathons.csv",
+                    dataType: "text",
+                    success: function (data) {
+                        var csv_data = data.split(/\r?\n|\r/);
+                        var table_data = '<table class="table table-bordered table-striped">';
+                        for (var count = 0; count < csv_data.length; count++) {
+                            var cell_data = csv_data[count].split(",");
+                            table_data += '<tr>';
+                            for (var cell_count = 0; cell_count < cell_data.length; cell_count++) {
+                                if (count === 0) {
+                                    table_data += '<th>' + cell_data[cell_count] + '</th>';
+                                }
+                                else {
+                                    table_data += '<td>' + cell_data[cell_count] + '</td>';
+                                }
+                            }
+                            table_data += '</tr>';
+                        }
+                        table_data += '</table>';
+                        $('#external_hackathons_table').html(table_data);
+                    }
+                });
+            });
+
+        });
+    </script>
+
+    <script>
+        // This reads the Internal Hackathons
+        $(document).ready(function () {
+            $('#load_data_external').click(function () {
+                $.ajax({
+                    url: "assets/Hackathons & Competitions For School of Computing - Internal Hackathons.csv",
+                    dataType: "text",
+                    success: function (data) {
+                        var csv_data = data.split(/\r?\n|\r/);
+                        var table_data = '<table class="table table-bordered table-striped">';
+                        for (var count = 0; count < csv_data.length; count++) {
+                            var cell_data = csv_data[count].split(",");
+                            table_data += '<tr>';
+                            for (var cell_count = 0; cell_count < cell_data.length; cell_count++) {
+                                if (count === 0) {
+                                    table_data += '<th>' + cell_data[cell_count] + '</th>';
+                                }
+                                else {
+                                    table_data += '<td>' + cell_data[cell_count] + '</td>';
+                                }
+                            }
+                            table_data += '</tr>';
+                        }
+                        table_data += '</table>';
+                        $('#internal_hackathons_table').html(table_data);
+                    }
+                });
+            });
+
         });
     </script>
 
@@ -100,28 +128,26 @@
         </p>
 
         <div class="tab">
-            <button class="tablinks" onclick="openTabs(event, 'External Hackathons')">External Hackathons</button>
+            <button class="tablinks" name="load_data_external" id="load_data_external"
+                onclick="openTabs(event, 'External Hackathons')">External Hackathons</button>
             <button class="tablinks" onclick="openTabs(event, 'Internal Hackathons')">Internal Hackathons</button>
         </div>
 
         <!-- Tab content -->
         <div id="External Hackathons" class="tabcontent">
-            <h3> External Hackathons</h3>
-            <p>External Hackathons list here.</p>
             <div class="container">
                 <div class="table-responsive">
-                    <div align="center">
-                        <button type="button" name="load_data_external" id="load_data_external" class="btn btn-info">Load Data</button>
-                    </div>
-                    <br />
-                    <div id="employee_table"></div>
+                    <div id="external_hackathons_table"></div>
                 </div>
             </div>
         </div>
 
         <div id="Internal Hackathons" class="tabcontent">
-            <h3>Internal Hackathons</h3>
-            <p>Internal Hackathons list here.</p>
+            <div class="container">
+                <div class="table-responsive">
+                    <div id="internal_hackathons_table"></div>
+                </div>
+            </div>
         </div>
 
     </div>
