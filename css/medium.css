@@ -94,7 +94,7 @@ img {
 #about-para {
     width: 70%;
     color: black;
-    font-size: 21px;
+    font-size: 18px;
     line-height: 32px;
     padding: 10px 0 30px 0;
     margin: 0 auto;
@@ -134,6 +134,17 @@ img {
 #banner-medium-img {
     width: 40%;
     height: 40%;
+}
+
+#medium-link {
+    width: 70%;
+    margin: 0 auto;
+    color: #222f3e;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 20px 0 0 0;
+    text-align: left;
+    font-size: 18px;
 }
 
 /* ---------------------------------------------------------------------------------------------------------------- */

@@ -139,7 +139,7 @@ img {
 
 #socollab-para {
     line-height: 35px;
-    font-size: 22px;
+    font-size: 18px;
 }
 
 #socollab img {
@@ -207,7 +207,7 @@ img {
 .banner-text {
     white-space: nowrap; 
     color: white;
-    font-size: 175%;
+    font-size: 25px;
     position: absolute;
     overflow: hidden;
     top: 50%;
@@ -561,7 +561,7 @@ img {
     
     #socollab-para {
         line-height: 32px;
-        font-size: 17px;
+        /* font-size: 20%; */
     }
 
     #socollab-para br {
