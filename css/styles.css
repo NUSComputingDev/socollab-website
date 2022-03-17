@@ -618,7 +618,9 @@ img {
     
     #socollab-para {
         line-height: 32px;
-        /* font-size: 20%; */
+        font-size: 17px;
+        padding-left: 2%;
+        padding-right: 2%;
     }
 
     #socollab-para br {

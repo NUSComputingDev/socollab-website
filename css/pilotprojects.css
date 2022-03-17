@@ -188,13 +188,16 @@ img {
     font-size: 22px;
 }
 
+
 #segment-header-special {
     width: 70%;
     margin: 0 auto;
     color: #222f3e;
-    font-size: 22px;
+    font-size: 25px;
     font-weight: bold;
+    padding: 20px 0 0 0;
     text-align: left;
+    font-size: 22px;
     padding-top: 4%;
 }
 
