@@ -10,6 +10,29 @@
         <script src="https://kit.fontawesome.com/8663eb90fc.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="css/hackathons.css">
         <title>About | NUS Students' Computing Club</title>
+
+        <script>
+            function openCity(evt, cityName) {
+                // Declare all variables
+                var i, tabcontent, tablinks;
+
+                // Get all elements with class="tabcontent" and hide them
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+
+                // Get all elements with class="tablinks" and remove the class "active"
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+
+                // Show the current tab, and add an "active" class to the button that opened the tab
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+        </script>
     </head>
 
     <body>
@@ -26,35 +49,28 @@
         </div>
 
         <div id="main-container">
-            <img src="assets/banner.png" alt="" id="hero-img">
-            <img src="assets/hero_soccat.png" alt="" id="hero-img-dup">
-            <!-- <img id="hero-img"> -->
-            <!-- <div id="hero-img"></div> -->
+            <img src="assets/banner_hackathon.jpg" alt="Hackathons" id="banner-hackathon-img">
 
             <p id="about-para">
-                The NUS Students' Computing Club, colloquially referred to as the <b style="color: #6a89cc;">Computing Club</b>, 
-                is a constituent club under the NUS Students' Union (NUSSU). 
-                It comprises and represents all undergraduates pursuing a degree in NUS School of Computing.
-            </p>
-
-            <p id="segment-header">Our Past</p>
-            <p id="segment-para">
                 Due to the overwhelming amount of hacakthons which take place both within and outside NUS, the Academic Wing has come up with this excel tracker which allows all students from the School of Computing to easily navigate through a range of hackathons offered. This way we ensure students do not miss opportunities and make the most out of their university life.
             </p>
 
-            <p id="segment-header">Our Mission</p>
-            <p id="segment-para">
-                To be the voice of the students, 
-                ensure their holistic well being,
-                and bridge gaps between them and the School.
-            </p>
-
-            <p id="segment-header">Vision</p>
-            <p id="segment-para">
-                To continually support our faculty, to build close-knit relationships 
-                among Computing Club members past and present, 
-                and drive the charge for campus vibrancy.
-            </p>
+            <div class="tab">
+                <button class="tablinks" onclick="openCity(event, 'External Hackathons')">External Hackathons</button>
+                <button class="tablinks" onclick="openCity(event, 'Internal Hackathons')">Internal Hackathons</button>
+              </div>
+              
+              <!-- Tab content -->
+              <div id="External Hackathons" class="tabcontent">
+                <h3> External Hackathons</h3>
+                <p>External Hackathons list here.</p>
+              </div>
+              
+              <div id="Internal Hackathons" class="tabcontent">
+                <h3>Internal Hackathons</h3>
+                <p>Internal Hackathons list here.</p>
+              </div>
+              
         </div>
 
         <div id="footer">
@@ -80,9 +96,3 @@
     </body>
 </html>
 
-<!-- <p id="header-stmt">
-    Meet the Team 
-    <i style="vertical-align: middle; font-size: 17px; padding-left: 2px; color: #395B9B;" class="fa-solid fa-circle"></i>
-    <i style="vertical-align: middle; font-size: 17px; padding-left: 2px; color: #93c6c3;" class="fa-solid fa-circle"></i>
-    <i style="vertical-align: middle; font-size: 17px; padding-left: 2px; color: #92CEFC;" class="fa-solid fa-circle"></i>
-</p> -->
