@@ -130,6 +130,7 @@ img {
     text-align: center;
     float: center;
     margin: 0 auto;
+    border-radius: 10px;
   }
   
   /* Style the buttons that are used to open the tab content */
@@ -185,6 +186,7 @@ img {
   #banner-hackathon-img {
     width: 40%;
     height: 40%;
+    border-radius: 10px;
     }
 
 /* ---------------------------------------------------------------------------------------------------------------- */

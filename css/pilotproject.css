@@ -182,6 +182,7 @@ img {
 #banner-pilot-img {
     width: 40%;
     height: 40%;
+    border-radius: 10px;
 }
 
 

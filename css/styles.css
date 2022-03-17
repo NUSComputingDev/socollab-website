@@ -144,7 +144,7 @@ img {
 
 #socollab img {
     height: 80%;
-    padding-right: 5%;
+    /* padding-right: 5%; */
 }
 
 #socollab #socollab-text-left {
@@ -184,19 +184,23 @@ img {
     height: 80%;
     transition: .5s ease;
     opacity: 0;
+    border-radius: 10px;
   }
 
 .banner-image {
     display: block;
     width: 100%;
     height: 100%;
+    border-radius: 10px;
 }
 
 .banner-image-overlay {
     position: relative;
     width: 45%;
     height: 123%;
-    display: inline-block
+    display: inline-block;
+    border-radius: 10px;
+    
 }
   
 .banner-image-overlay:hover .overlay {
