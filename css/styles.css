@@ -215,6 +215,8 @@ img {
     float: right;
     display: inline;
     width: 40%;
+    overflow: hidden;
+    height: 80%
 }
 
 #socollab #socollab-text-right #banner-image {
@@ -263,7 +265,7 @@ img {
 .banner-text {
     white-space: nowrap; 
     color: white;
-    font-size: 25px;
+    font-size: 2vw;
     position: absolute;
     overflow: hidden;
     top: 50%;
