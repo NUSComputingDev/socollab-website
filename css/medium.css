@@ -123,6 +123,7 @@ img {
     background-color: whitesmoke;
     width: 100%;
     height: auto;
+    min-height: 70vh; 
     margin: 0;
     padding: 30px 0;
     text-align: center;
